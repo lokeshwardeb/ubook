@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cus_placeholder::placeholder{
+    text-align: center;
+    outline: green !important;
+    
+}
+.cus_placeholder{
+    background-color: #ddd;
+    outline: green !important;
+    max-width: 500px !important;
+    
+    min-height: 50px !important;
+    margin: auto;
+}
+:root{
+    --primary-color: #0596FF;
+    --success-color: #47D42A;
+
+}
+
+.bg-primary{
+    background-color: var(--primary-color) !important;
+}
+.bg-success{
+    background-color: var(--success-color) !important;
+}
+.btn-primary{
+    background-color: var(--primary-color) !important;
+}
+.btn-success{
+    background-color: var(--success-color) !important;
+}
+.cus_login_signup_btn{
+    width: 200px !important;
+    height: 40px !important;
+    border-radius: 50px !important;
+}
+.cus_login_signup_btn:hover{
+   background-color: white !important;
+   color: black !important;
+}
+.cus_signup_btn{
+    width: 250px !important;
+    height: 50px !important;
+    border-radius: 50px !important;
+}
+.cus_signup_btn:hover{
+    background-color: white !important;
+    color: black !important;
+}

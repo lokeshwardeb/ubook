@@ -1,22 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UBook</title>
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/custom.css">
-</head>
-<body>
+<?php
 
-    <main>
-        <div class="text-center text-primary">h</div>
-    </main>
+require_once __DIR__ . '/inc/_header.php';
 
-    
-<script src="/assets/js/bootstrap.min.js"></script>
-<script src="/assets/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/scripts.js"></script>
-</body>
-</html>
+?>
+
+<!-- main code starts from here -->
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 text-center">
+                <img src="/assets//img/university.png" alt="">
+            </div>
+            <div class="col-md-6 col-sm-12 mt-5">
+                <div class="container text-center mt-5 fs-4">
+                    Welcome to UBook
+                </div>
+                <div class="container form_section mt-4">
+                    <form action="" method="post">
+                        <div class="mb-3 mt-3">
+                            <input type="text" name="email_or_phone_no" id="" class="form-control cus_placeholder" placeholder="Email address or Phone no">
+                        </div>
+                        <div class="mb-3 mt-4">
+                            <input type="text" name="password" id="" class="form-control cus_placeholder" placeholder="Password">
+                        </div>
+                        <div class="mb-3 mt-4 text-center">
+                            <button type="submit" class="btn btn-primary text-center cus_login_signup_btn">Login</button>
+                        </div>
+
+                        <div class="mb-3 mt-5 text-center">
+                            <a href="" class="nav-link text-primary">Are you forgotten your password?</a>
+                        </div>
+
+                        <div class="mb-3 mt-3">
+                            <hr class="mt-5 border-1">
+                        </div>
+
+                        <div class="mb-3 text-center mt-5">
+                    <a href="/dfd">    <button type="button" class="btn btn-success text-center cus_signup_btn">Create new account</button>
+</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- main code starts from here -->
+
+<?php
+
+require_once __DIR__ . '/inc/_footer.php';
+
+?>
+
+<?php
+
+require_once __DIR__ . '/inc/_footer_script.php';
+
+?>
