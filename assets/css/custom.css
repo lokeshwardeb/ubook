@@ -20,6 +20,13 @@
 :root{
     --primary-color: #0596FF;
     --success-color: #47D42A;
+    --secondary-color: #ddd;
+
+    --secondary-text-color: #616161;
+    --hover-primary-color: #E7E3E3;
+    --light-secondary-color: #F5F5F5;
+
+
 
 }
 
@@ -29,11 +36,32 @@
 .bg-success{
     background-color: var(--success-color) !important;
 }
+.bg-secondary{
+    background-color: var(--secondary-color) !important;
+}
+.text-secondary{
+    color: var(--secondary-text-color) !important;
+}
+.bg-light-secondary{
+    background-color: var(--light-secondary-color) !important;
+}
+.text-light-secondary{
+    color: var(--light-secondary-color) !important;
+}
+
+.border-secondary{
+    color: var(--secondary-color) !important;
+}
+
 .btn-primary{
     background-color: var(--primary-color) !important;
 }
 .btn-success{
     background-color: var(--success-color) !important;
+}
+.btn-secondary{
+    background-color: var(--secondary-color) !important;
+    color: black !important;
 }
 .cus_login_signup_btn{
     width: 200px !important;
@@ -53,3 +81,182 @@
     background-color: white !important;
     color: black !important;
 }
+.profile_img{
+    min-height: 40px !important;
+    min-width: 40px !important;
+}
+.profile_link:hover{
+    background-color: var(--light-secondary-color) !important;
+}
+.menu_content{
+
+    width: 300px !important;
+    height: 150px !important;
+    /* background-color: black !important; */
+
+    /* max-width: 50px !important; */
+    /* max-height: 3rem !important; */
+}
+.menu_content img{
+    max-height: 60px !important;
+    /* max-height: 100px !important; */
+}
+
+.menu_hover:hover{
+    /* width: 100%; */
+    background-color: var(--light-secondary-color) !important;
+}
+/* #menu_news:hover{
+    background-color: var(--light-secondary-color) !important;
+} */
+
+/* body::-webkit-scrollbar{
+    display: none;
+}
+.sidebar_section{
+    overflow: hidden !important;
+}
+.sidebar_section:hover{
+    overflow-y: auto !important;
+} */
+#side_section{
+    /* width: auto; */
+    /* background-color: #f0f0f0; */
+    padding: 20px;
+    /* Set a fixed height and hide overflow initially */
+    height: 100vh !important; /* Adjust as needed */
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+}
+#side_section:hover{
+    /* Add a maximum height to enable the scrollbar */
+    max-height: 100vh; /* Adjust as needed */
+    /* Set overflow-y to auto to show the scrollbar */
+    overflow-y: auto;
+
+}
+
+.info_sidebar_section{
+    float: right !important;
+}
+
+#info_side_section{
+        /* width: auto; */
+    /* background-color: #f0f0f0; */
+    padding: 20px;
+    /* Set a fixed height and hide overflow initially */
+    height: auto; /* Adjust as needed */
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+}
+#info_side_section:hover{
+    /* Add a maximum height to enable the scrollbar */
+    max-height: 90vh; /* Adjust as needed */
+    /* Set overflow-y to auto to show the scrollbar */
+    overflow-y: auto;
+}
+.sidebar_section{
+    position: fixed;
+}
+.info_sidebar_section{
+    position: fixed;
+    
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+/* 
+================================================================
+    post section design starts here
+================================================================
+*/
+
+.middle_post_section{
+    height: auto !important;
+}
+.post_section{
+    height: auto !important;
+    /* background-color: white; */
+}
+.page {
+
+    background-color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .post_input{
+    cursor: pointer;
+    min-width: 400px;
+  }
+  .posted_by{
+    
+    
+  }
+
+  #comment_section{
+    cursor: pointer;
+  }
+  /* #comment_section:hover{
+    color: #ddd;
+  } */
+
+  .posted_by:hover{
+    text-decoration: underline;
+    
+  }
+
+  .post_media_section img{
+    max-width: 200px !important;
+    max-height: 200px !important;
+  }
+
+/* 
+================================================================
+    post section design ends here
+================================================================
+*/
+
+
+/* 
+================================================================
+    profiles section design ends here
+================================================================
+*/
+.profile_banner{
+    width: 100vw !important;
+    height: 250px !important;
+    background-color: var(--secondary-color) !important;
+}
+
+.profile_image{
+    width: 150px !important;
+    height: 150px !important;
+    /* background-color: green !important; */
+}
+.view_profile_ul{
+    justify-content: space-evenly;
+}
+.photos_section img{
+    /* max-width: 100px; */
+    /* min-height: 300px; */
+    /* max-height: 300px; */
+}
+
+
+
+
+
+/* 
+================================================================
+    profiles section design ends here
+================================================================
+*/
+
+
+
+
+/* body{
+    overflow: hidden;
+} */

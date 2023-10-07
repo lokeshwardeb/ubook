@@ -10,6 +10,10 @@ $Routes = [
 
     "/" => __DIR__ . "/views/pages/views.home.php",
     "/home" => __DIR__ . "/views/pages/views.home.php",
+    "/signup" => __DIR__ . "/views/pages/views.signup.php",
+    "/dashboard" => __DIR__ . "/views/pages/views.dashboard.php",
+    "/profiles" => __DIR__ . "/views/pages/views.profiles.php",
+    // "/test" => __DIR__ . "/views/pages/views.test.php",
 
 ];
 

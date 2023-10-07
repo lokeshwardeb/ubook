@@ -36,7 +36,7 @@ require_once __DIR__ . '/inc/_header.php';
                         </div>
 
                         <div class="mb-3 text-center mt-5">
-                    <a href="/dfd">    <button type="button" class="btn btn-success text-center cus_signup_btn">Create new account</button>
+                    <a href="/signup">    <button type="button" class="btn btn-success text-center cus_signup_btn">Create new account</button>
 </a>
                         </div>
 
