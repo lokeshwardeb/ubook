@@ -2,6 +2,7 @@
 <div class="container-fluid bg-secondary sticky-top  border-bottom border-1 border-dark">
             <div class="navbar_section bg-secondary container-fulid">
                 <nav class="navbar">
+                    <a href="/dashboard" class="nav-link"><div class="brand_title ms-4 me-4 fs-3">UBook</div></a>
                     <div class="search_bar d-flex">
                         <input type="text" class="form-control" placeholder="Search on UBook">
                         <button type="submit" class="btn btn-primary">Search</button>

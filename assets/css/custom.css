@@ -167,6 +167,89 @@ body::-webkit-scrollbar{
     display: none;
 }
 
+._sidebar_main_section{
+
+}
+
+/* @media screen and (max-width: 1000px) {
+    ._sidebar_main_section{
+        display: none !important;
+    }
+    ._info_sidebar_main_section{
+        display: none !important;
+    }
+    .info_side_section{
+        display: none !important;
+    }
+} */
+
+@media screen  and (max-width: 800px) {
+    ._sidebar_main_section{
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+    .main_content_section .col-md-6{
+        width: 100% !important;
+    }
+    ._sidebar_main_section{
+        display: none !important;
+    }
+    ._info_sidebar_main_section{
+        display: none !important;
+    }
+    .info_side_section{
+        display: none !important;
+    }
+    /* .sidebar_section {
+        display: none !important;
+    } */
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    .main_content_section .col-md-6{
+        width: 100% !important;
+    }
+    ._sidebar_main_section{
+        display: none !important;
+    }
+    ._info_sidebar_main_section{
+        display: none !important;
+    }
+    .info_side_section{
+        display: none !important;
+    }
+    .sidebar_section {
+        display: none !important;
+    }
+}
+
+/* 
+@media screen and (min-width: 800px) {
+    ._sidebar_main_section{
+        display: none !important;
+    }
+    ._info_sidebar_main_section{
+        display: none !important;
+    }
+    .info_side_section{
+        display: none !important;
+    }
+
+    #side_section{
+       display: none !important;
+    }
+    #side_section:hover{
+display: none !important;
+    
+    }
+    .main_content_section .col-md-3{
+        display: none !important;
+    }
+} */
+
+
 /* 
 ================================================================
     post section design starts here
@@ -228,6 +311,11 @@ body::-webkit-scrollbar{
     width: 100vw !important;
     height: 250px !important;
     background-color: var(--secondary-color) !important;
+    /* background-image: url(/assets//img/university2.png); */
+    background-image: url(/assets/img/download\ \(1\).jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
 }
 
 .profile_image{

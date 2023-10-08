@@ -16,7 +16,7 @@ require_once __DIR__ . '/inc/_header.php';
         ?>
     </div>
 
-    <div class=" profiles_section ">
+    <div class=" profiles_section mb-5 pb-5">
         <div class="top_banner_and_info_section">
             <div class="profile_banner">
 
@@ -55,7 +55,7 @@ require_once __DIR__ . '/inc/_header.php';
 
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6">
                     <div class="intro_bio_section m-4 border-bottom border-dark border-1">
                         <div class="section_title_into">
                             Intro
@@ -80,7 +80,7 @@ require_once __DIR__ . '/inc/_header.php';
 
                     <div class="photos_section mt-4 pt-4 mb-4">
                         <div class="photos_section_title m-4 pb-4">
-                        Photos
+                            Photos
                         </div>
                         <div class="container">
                             <div class="row">
@@ -161,7 +161,15 @@ require_once __DIR__ . '/inc/_header.php';
 
 
                 </div>
-                <div class="col-6"></div>
+                <div class="col-md-6">
+                    <?php
+
+require __DIR__ . '/inc/_post_section.php';
+require __DIR__ . '/inc/_post_section.php';
+
+
+?>
+                </div>
             </div>
         </div>
 
