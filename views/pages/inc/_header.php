@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+// $_SESSION['alert_message'] = '';
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,5 +18,6 @@
     <link rel="stylesheet" href="/assets/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/custom.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 <body>

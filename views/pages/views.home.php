@@ -9,7 +9,7 @@ require_once __DIR__ . '/inc/_header.php';
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 col-sm-12 text-center">
-                <img src="/assets//img/university.png" alt="">
+                <img src="/assets//img/university.png" class="login_signup_university_img" alt="">
             </div>
             <div class="col-md-6 col-sm-12 mt-5">
                 <div class="container text-center mt-5 fs-4">

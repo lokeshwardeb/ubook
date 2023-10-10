@@ -3,10 +3,29 @@
             <div class="navbar_section bg-secondary container-fulid">
                 <nav class="navbar">
                     <a href="/dashboard" class="nav-link"><div class="brand_title ms-4 me-4 fs-3">UBook</div></a>
-                    <div class="search_bar d-flex">
+                    <div class="search_icon_section">
+                    <!-- <div class=" d-flex">
                         <input type="text" class="form-control" placeholder="Search on UBook">
                         <button type="submit" class="btn btn-primary">Search</button>
+                    </div> -->
                     </div>
+                    
+
+                    <?php
+
+
+require_once __DIR__ . '/_search_bar.php';
+
+
+
+
+
+
+
+
+?>
+
+
                     <ul class="nav text-center m-auto bg-secondary">
                         <li class=" nav text-center "><a href="" class="nav-link text-dark text-center">Home</a></li>
                         <li class=" nav text-center"><a href="" class="nav-link text-dark text-center">Connects</a></li>
