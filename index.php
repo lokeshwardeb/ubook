@@ -14,6 +14,7 @@ $Routes = [
     "/dashboard" => __DIR__ . "/views/pages/views.dashboard.php",
     "/profiles" => __DIR__ . "/views/pages/views.profiles.php",
     "/likes" => __DIR__ . "/views/pages/views.like.php",
+    "/logout" => __DIR__ . "/views/pages/views.logout.php",
     // "/test" => __DIR__ . "/views/pages/views.test.php",
 
 ];

@@ -1,6 +1,12 @@
 <?php
 
-require_once __DIR__ . '/inc/_header.php';
+require_once __DIR__ . '/inc/_login_header.php';
+require_once __DIR__ . '/../../config/config.php';
+require_once __DIR__ . '/../../models/models.php';
+require_once __DIR__ . '/../../controllers/controllers.php';
+
+$controllers = new controllers;
+
 
 ?>
 
@@ -17,14 +23,24 @@ require_once __DIR__ . '/inc/_header.php';
                 </div>
                 <div class="container form_section mt-4">
                     <form action="" method="post">
+
+                    <div class="mb-3 mt-3">
+                        <?php
+
+$controllers->login();
+
+
+?>
+                    </div>
+
                         <div class="mb-3 mt-3">
-                            <input type="text" name="email_or_phone_no" id="" class="form-control cus_placeholder" placeholder="Email address or Phone no">
+                            <input type="text" name="email_or_phone_no" id="" class="form-control cus_placeholder" placeholder="Email address or Phone no" required>
                         </div>
                         <div class="mb-3 mt-4">
-                            <input type="text" name="password" id="" class="form-control cus_placeholder" placeholder="Password">
+                            <input type="text" name="password" id="" class="form-control cus_placeholder" placeholder="Password" required>
                         </div>
                         <div class="mb-3 mt-4 text-center">
-                            <button type="submit" class="btn btn-primary text-center cus_login_signup_btn">Login</button>
+                            <button type="submit" name="login_ubook" class="btn btn-primary text-center cus_login_signup_btn">Login</button>
                         </div>
 
                         <div class="mb-3 mt-5 text-center">

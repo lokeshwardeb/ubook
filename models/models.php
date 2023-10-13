@@ -47,9 +47,9 @@ class models extends database{
 
 
      }
-     public function get_data_where($table_name, $where_conditions_and_values){
+     public function get_data_where($table_name, $where_conditions_and_values, $order_by_add_status = '', $order_table_cond_and_asc_or_desc_value = ''){
 
-        $sql = "SELECT * FROM `$table_name` WHERE $where_conditions_and_values";
+        $sql = "SELECT * FROM `$table_name` WHERE $where_conditions_and_values  $order_by_add_status $order_table_cond_and_asc_or_desc_value";
 
         $result = $this->connect()->query($sql);
 
@@ -68,6 +68,16 @@ class models extends database{
 
 
      }
+
+
+   public function join_data($first_table, $second_table, $table_join_conditions){
+      $sql = "SELECT * FROM $first_table INNER JOIN $second_table ON $table_join_conditions";
+
+      $result = $this->connect()->query($sql);
+
+      return $result;
+
+   }
 
 
 

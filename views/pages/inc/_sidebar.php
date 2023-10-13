@@ -95,7 +95,7 @@
                             </div>
                             <div class="menu_content text-center">
                                 <div class="mb-5 pb-5 mt-4 menu_hover ps-4 pe-4">
-                                    <a href="" class="nav-link  d-flex">
+                                    <a href="/logout" class="nav-link  d-flex">
                                         <div class="content hover_menu d-flex mb-5 pb-4">
                                             <img src="/assets/img/logout.png" id="menu_news" class="img-fluid hover_menu" alt=" ">
                                             <div class="menu_news menu_hover m-auto p-5 pt-2">Logout</div>
