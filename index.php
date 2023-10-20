@@ -13,8 +13,12 @@ $Routes = [
     "/signup" => __DIR__ . "/views/pages/views.signup.php",
     "/dashboard" => __DIR__ . "/views/pages/views.dashboard.php",
     "/profiles" => __DIR__ . "/views/pages/views.profiles.php",
-    "/likes" => __DIR__ . "/views/pages/views.like.php",
+    "/like" => __DIR__ . "/views/pages/inc/like.php",
+    "/dislike" => __DIR__ . "/views/pages/inc/dislike.php",
+    "/process" => __DIR__ . "/views/pages/inc/process.php",
+    "/comment.php" => __DIR__ . "/views/pages/inc/comment.php",
     "/logout" => __DIR__ . "/views/pages/views.logout.php",
+    "/like_func" => __DIR__ . "/views/pages/views.likes_system.php",
     // "/test" => __DIR__ . "/views/pages/views.test.php",
 
 ];

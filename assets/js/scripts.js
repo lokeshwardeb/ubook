@@ -140,3 +140,7 @@ function like(){
 // if(department.value = 'univer_offi'){
 //     other_role.classList.remove('d-none');
 // }
+
+// function liked(){
+//     var like_btn = document.getElementsByName()
+// }

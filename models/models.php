@@ -79,6 +79,16 @@ class models extends database{
 
    }
 
+   public function delete_where($table_name, $target_row_and_values){
+      $sql = "DELETE FROM `$table_name` WHERE `$table_name`.$target_row_and_values";
+
+      $result = $this->connect()->query($sql);
+
+      return $result;
+
+
+   }
+
 
 
 

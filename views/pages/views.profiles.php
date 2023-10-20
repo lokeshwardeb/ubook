@@ -164,8 +164,8 @@ require_once __DIR__ . '/inc/_header.php';
                 <div class="col-md-6">
                     <?php
 
-require __DIR__ . '/inc/_post_section.php';
-require __DIR__ . '/inc/_post_section.php';
+require __DIR__ . '/inc/_my_profile_post_section.php';
+// require __DIR__ . '/inc/_post_section.php';
 
 
 ?>
