@@ -16,9 +16,13 @@ $Routes = [
     "/like" => __DIR__ . "/views/pages/inc/like.php",
     "/dislike" => __DIR__ . "/views/pages/inc/dislike.php",
     "/process" => __DIR__ . "/views/pages/inc/process.php",
+    "/inc_post_page" => __DIR__ . "/views/pages/inc/_post_page.php",
     "/comment.php" => __DIR__ . "/views/pages/inc/comment.php",
     "/logout" => __DIR__ . "/views/pages/views.logout.php",
     "/like_func" => __DIR__ . "/views/pages/views.likes_system.php",
+    "/comments" => __DIR__ . "/views/pages/views.comments.php",
+    "/copy_link" => __DIR__ . "/views/pages/views.copy_link.php",
+    "/post_page" => __DIR__ . "/views/pages/views.post_page.php",
     // "/test" => __DIR__ . "/views/pages/views.test.php",
 
 ];

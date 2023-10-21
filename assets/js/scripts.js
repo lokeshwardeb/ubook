@@ -19,8 +19,9 @@ if(your_role.value == 'University Officials'){
 }
 
 function comments(){
-    var comment_section = document.getElementById('comment_section');
-    var write_comment = document.getElementById('write_comment');
+    // var comment_section = document.getElementById('comment_section');
+    var comment_section = document.getElementsByClassName('comment_section');
+    var write_comment = document.getElementsByClassName('write_comment');
 
     write_comment.classList.toggle('d-none');
 

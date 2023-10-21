@@ -35,7 +35,7 @@ require_once __DIR__ . '/inc/_header.php';
 
 <?php 
 
-require_once __DIR__ . '/inc/_my_profile_post_section.php';
+require_once __DIR__ . '/inc/_comments_section.php';
 
 ?>
 
@@ -44,7 +44,7 @@ require_once __DIR__ . '/inc/_my_profile_post_section.php';
 
                     </div> -->
 
-                </div>
+                <!-- </div> -->
                 <!-- middle post section ends here -->
 
                 <div class="col-md-3 _sidebar_main_section">

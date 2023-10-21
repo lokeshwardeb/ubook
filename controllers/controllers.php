@@ -72,6 +72,55 @@ class controllers extends models
         }
     }
 
+    public function add_comments(){
+
+        // if(isset($_POST['more_comments'])){
+        //     echo 'more comments';
+
+        //     $comment_post_id = $this->pure_data($_POST['comment_post_id']);
+
+        //     $result = $this->get_data_where("comments", "`comment_post_id` = '$comment_post_id'");
+
+        //     if($result){
+        //         if($result->num_rows > 0){
+
+        //         }
+        //     }
+
+
+        // }
+
+
+        if(isset($_POST['submit_comment'])){
+            $comment_post_id = $this->pure_data($_POST['comment_post_id']);
+            $comment_user_id = $this->pure_data($_POST['comment_user_id']);
+            $comment_user_name = $this->pure_data($_POST['comment_user_name']);
+            $comment_text = $this->pure_data($_POST['comment_text']);
+
+            // add the comment on the db
+          $result = $this->insert("comments", " `comment_post_id`, `comment_user_id`, `comment_user_name`, `comment_text`", "'$comment_post_id','$comment_user_id','$comment_user_name','$comment_text'");
+
+          if($result){
+            echo $this->alert("success", "The comment has been posted successfully ! Please reload the page to see the changes !");
+            // echo '
+            
+            // <script>
+            // window.location.reload()
+            // </script>
+            
+            // ';
+          }else{
+            echo $this->alert("danger", "The comment has not been posted successfully ! Please try again later !");
+          }
+
+
+
+        }
+
+        // echo "this";
+
+    }
+
 
 public function create_post(){
 
