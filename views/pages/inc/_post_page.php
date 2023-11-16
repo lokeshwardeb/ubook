@@ -1,261 +1,210 @@
 <?php
 
-$post_user_id = $_SESSION['login_user_id'];
+require_once __DIR__ . '/../../../config/config.php';
+require_once __DIR__ . '/../../../models/models.php';
+require_once __DIR__ . '/../../../controllers/controllers.php';
 
-$result = $controllers->get_data_where("post", "`post_user_id` = '$post_user_id'");
+$controllers = new controllers;
+
+$comment_user_id = $_SESSION['login_user_id'];
+$comment_user_name = $_SESSION['login_user_username'];
+
+ $comment_post_id = $controllers->pure_data($_GET['post_id']);
+//  $more_comment = $controllers->pure_data($_GET['more_comment']);
+
+//  checking if the comment id is selected or if the comment id isset
+
+//  if(!isset($_GET['post_id'])){
+
+//     // that means if the comment id is not set then it will redirect on the dashboard page
+//     // otherwise it will continue the process and the execution
+
+//     echo '
+    
+//     <script>
+    
+//     window.location.href="/dashboard"
+
+//     </script>
+    
+//     ';
+//  }
+
+
+$result = $controllers->get_data_where("post", "`post_id` = '$post_id'")
+
+
 
 if ($result) {
     if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-             $post_text = $row['post_text'];
-             $post_media = $row['post_media'];
-             $post_id = $row['post_id'];
+        echo '<div class="post_section comment_section text-center text-secondary justify-content-center mt-5 pt-5">
+
+        <span class="text-start mb-5 pb-5"><a href="/dashboard" class="nav-link"><button class="btn btn-primary">Back</button></a></span>
+
+     ';
+
+     while ($row = $result->fetch_assoc()) {
+        // comment post id is the post id which has the comment and showed
+       $comment_post_id = $row['comment_post_id'];
+
+        // comment user id is the user id who has posted a comment on the post
+        $comment_user_id = $row['comment_user_id'];
+
+        // $post_id = $row['post_id'];
+
+ 
+        
+        echo '
+        
+        <div class="text-center mt-5 container mb-5 page pb-5">
+        <div class="comment_info container d-flex">
+        <div class="comment_user_img">
+        <img src="" class="img-fluid rounded-circle profile_img bg-secondary" alt="c_i">
+        </div>
+        <div class="ms-4 comment_username">
+        Lokeshwar Deb
+        </div>
+        </div><hr>
+      <hr>
+
+        <div class="comment_text mt-4 pt-4">
+        '.$row['comment_text'].'
+        </div>
+        
+        </div>';
+
+
+        
+
+
+    //     echo '
+        
+     
+
+    //   ';
+
+
+        // if ($post_text !== '') {
+        //     echo $post_text;
+        //     echo '
 
 
 
-            echo '
-            
-            <div class="container post_section mt-4 mb-4 pt-4 page">
+        //     ';
+        // }
+    }
 
-<div class="post_info"> <a href="" class="nav-link d-flex m-auto">
-        <img src="" alt=" " class="img-fluid profile_img me-2 rounded-circle bg-light">
-        <div class="posted_by"> ' . $_SESSION['login_user_username'] .'</div>
-        <!-- <div class="posted_by">' . $_SESSION['login_user_id'] . '</div> -->
-        <!-- <input type="text" class="form-control"> -->
-    </a>
-    <div class="poster_time text-secondary">8hr ago</div>
-</div>
+     echo '
+</div>';
 
-<hr>
-
-<div class="post_contents">
-    <div class="post_text">
-';?>
-
-
-<?php
-
-if($post_text !== ''){
-echo $post_text;
-}
-
-
-echo '
-    </div>
-
-    <div class="post_media_section container text-center pt-4 pb-4">
-        <img src="/storage/uploads/'. $post_media .'" alt="">
-    </div>
-</div>
-
-
-<hr>
-
-
-<div class="actions_section text-center">
-    <div class="row">
-        <div class="col-4 like_section">
-            <i class="fa-brands like_value fa-gratipay text-danger"></i>
-
-            ';
-
-            ?>
-
-            <?php
-
-$result_like_count = $controllers->get_data_where("likes", "`like_post_id` = '$post_id'");
-
-if($result_like_count){
-    if($result_like_count->num_rows > 0){
-        echo $result_like_count->num_rows;
-
+        
     }else{
-        echo '0';
+        echo '<div class="post_section container comment_section text-center text-secondary justify-content-center mt-5 pt-5">
+        <span class="text-start mb-5 pb-5"><a href="/dashboard" class="nav-link"><button class="btn btn-primary">Back</button></a></span>
+        <div class="text-center mt-5 pt-5 mb-5 pb-5">No comments found</div>
+    
+</div>';
     }
-}
 
+    // insert comments
 
-            echo '
-        </div>
-        <div class="col-4 text-right">
-            <i class="fa-regular fa-comment"></i>
+    // $controllers->add_comments();
 
-            339
-        </div>
-        <div class="col-4">
-            <i class="fa-solid fa-share"></i>
+    $controllers->add_comments();
 
-            564
+    
+// add comments
+// echo '
+// <div id="write_comment" class="mt-4 d-none write_comment">
+//         <form class="comment_form">
 
-        </div>
-    </div>
-</div>
-
-<hr>
-
-
-
-<div class="actions_section text-center">
-    <div class="row">
-        <div class="col-4">
-
+//         <textarea name="comment_text" id=""  cols="30" rows="10" placeholder="Write your comment" class="form-control comment_text mt-4 mb-4"></textarea>
    
 
-    <form class="myForm">
-    <input type="hidden" name="post_id" class="post_id" placeholder="post_id" value="'. $post_id .'">
-    <input type="hidden" name="like_status" class="like_status" placeholder="like_status">
-    ';
+//         <button type="submit" class="btn btn-primary comment_submit" name="comment_submit" class="comment_submit">Post</button>
+//         </form>
+//     </div>
 
-    ?>
-    <?php
-
-    $like_user_id = $_SESSION['login_user_id'];
-
-    $result_like = $controllers->get_data_where("likes", "`like_user_id` = '$like_user_id' AND `like_post_id` = '$post_id'");
-
-    if($result_like){
-        if($result_like->num_rows > 0){
-            echo '
-
-    <button type="button" class="submitBtn btn btn-outline-primary" >Liked</button>
-
-            
-            ';
-        }else{
-            echo '
-    <button type="button" class="submitBtn btn btn-outline-primary" >Like</button>
-            
-            ';
-        }
-    }
-
-    echo '
-</form>
-<div class="resultMessage" style="display: none;"></div>
-
-
-           
-          
+// ';
 
 
 
-
-
-   
-        </div>
-        <div class="col-4 comment_section" id="comment_section" >
-            <a href="/comments?post_id='.$post_id.'">
-            <button type="button" class="btn ">
-                <i class="fa-regular fa-comment"></i>
-                Comment
-            </button>
-            </a>
-        </div>
-        <div class="col-4">
-            <button type="button" class="btn">
-                <i class="fa-solid fa-share"></i>
-                Share
-        </div>
-        </button>
-    </div>
-
-    <div id="write_comment" class="mt-4 d-none write_comment">
-        <form class="comment_form">
-
-        <textarea name="comment_text" id=""  cols="30" rows="10" placeholder="Write your comment" class="form-control comment_text mt-4 mb-4"></textarea>
-    <input type="text" name="post_id" class="post_id" placeholder="post_id" value="'. $post_id .'">
-
-        <button type="button" class="btn btn-primary comment_submit" name="comment_submit" class="comment_submit">Post</button>
-        </form>
-    </div>
-
-</div>
-
-<hr>
-
-</div>
-
-            ';
-
-
-            // if ($post_text !== '') {
-            //     echo $post_text;
-            //     echo '
-                
-                
-                
-            //     ';
-            // }
-        }
-    }
 }
 
 
 
 ?>
 
+
+   
+
+
+
+
+            </div>
+
+
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <script src="/assets/js/jquery_3.6.0.min.js"></script>
 
 <script>
-    $(document).ready(function() {
-    $('.submitBtn').click(function() {
-        var post_id = $(this).closest('form').find('.post_id').val();
-        var like_status = $(this).closest('form').find('.like_status').val();
-        var submitBtn = $(this).closest('form').find('.submitBtn');
-        // var like_value = $(this).closest('div').find('.like_value');
-        // var like_section = $(this).closest('like_section').find
+    $(document).ready(function () {
+        $('.submitBtn').click(function () {
+            var post_id = $(this).closest('form').find('.post_id').val();
+            var like_status = $(this).closest('form').find('.like_status').val();
+            var submitBtn = $(this).closest('form').find('.submitBtn');
+            // var like_value = $(this).closest('div').find('.like_value');
+            // var like_section = $(this).closest('like_section').find
 
 
-        // var resultMessage = $(this).closest('form').siblings('.resultMessage').val();
-        var resultMessage = $(this).closest('form').siblings('.resultMessage');
-        // var age = $(this).closest('form').find('.age').val();
-        // var location = $(this).closest('form').find('.location').val();
+            // var resultMessage = $(this).closest('form').siblings('.resultMessage').val();
+            var resultMessage = $(this).closest('form').siblings('.resultMessage');
+            // var age = $(this).closest('form').find('.age').val();
+            // var location = $(this).closest('form').find('.location').val();
 
-        $.ajax({
-            url: '/process',  // Replace with your PHP script URL
-            method: 'POST',      // Use POST or GET, depending on your needs
-            data: {
-                post_id: post_id,
-                like_status: like_status
-            },
-            success: function(response) {
-                // Handle the response from the PHP script
-                console.log(response);
-                // resultMessage.text(response).fadeIn();
-                submitBtn.text(response).fadeIn(); 
-                // like_value.text("1added").fadeIn();
-            }
+            $.ajax({
+                url: '/process', // Replace with your PHP script URL
+                method: 'POST', // Use POST or GET, depending on your needs
+                data: {
+                    post_id: post_id,
+                    like_status: like_status
+                },
+                success: function (response) {
+                    // Handle the response from the PHP script
+                    console.log(response);
+                    // resultMessage.text(response).fadeIn();
+                    submitBtn.text(response).fadeIn();
+                    // like_value.text("1added").fadeIn();
+                }
+            });
         });
+
+        $('.comment_submit').click(function () {
+            var post_id = $(this).closest('form').find('.post_id').val();
+            var comment_text = $(this).closest('form').find('.comment_text').val();
+            var comment_submit = $(this).closest('form').find('.comment_submit');
+            // var resultMessage = $(this).closest('form').siblings('.resultMessage').val();
+            var resultMessage = $(this).closest('form').siblings('.resultMessage');
+            // var age = $(this).closest('form').find('.age').val();
+            // var location = $(this).closest('form').find('.location').val();
+
+            $.ajax({
+                url: '/comment', // Replace with your PHP script URL
+                method: 'POST', // Use POST or GET, depending on your needs
+                data: {
+                    post_id: post_id,
+                    comment_text: comment_text
+                },
+                success: function (response) {
+                    // Handle the response from the PHP script
+                    // console.log(response);
+                    // resultMessage.text(response).fadeIn();
+                    // submitBtn.text(response).fadeIn();
+                    console.log(response);
+                }
+            });
+        })
     });
-
-    $('.comment_submit').click(function(){
-        var post_id = $(this).closest('form').find('.post_id').val();
-        var comment_text = $(this).closest('form').find('.comment_text').val();
-        var comment_submit = $(this).closest('form').find('.comment_submit');
-        // var resultMessage = $(this).closest('form').siblings('.resultMessage').val();
-        var resultMessage = $(this).closest('form').siblings('.resultMessage');
-        // var age = $(this).closest('form').find('.age').val();
-        // var location = $(this).closest('form').find('.location').val();
-
-        $.ajax({
-            url: '/comment',  // Replace with your PHP script URL
-            method: 'POST',      // Use POST or GET, depending on your needs
-            data: {
-                post_id: post_id,
-                comment_text: comment_text
-            },
-            success: function(response) {
-                // Handle the response from the PHP script
-                // console.log(response);
-                // resultMessage.text(response).fadeIn();
-                // submitBtn.text(response).fadeIn();
-                console.log(response);
-            }
-        });
-    })
-});
-
 </script>
 
 

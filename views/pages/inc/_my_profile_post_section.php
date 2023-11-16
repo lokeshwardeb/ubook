@@ -80,7 +80,20 @@ if($result_like_count){
         <div class="col-4 text-right">
             <i class="fa-regular fa-comment"></i>
 
-            339
+            ';
+
+            $result_comments_count = $controllers->get_data_where("comments", "`comment_post_id` = '$post_id'");
+
+            if($result_comments_count){
+                if($result_comments_count->num_rows > 0){
+                    echo $result_comments_count->num_rows;
+                }else{
+                    echo "0";
+                }
+            }
+
+
+            echo '
         </div>
         <div class="col-4">
             <i class="fa-solid fa-share"></i>

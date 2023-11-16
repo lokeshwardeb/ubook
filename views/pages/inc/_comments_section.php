@@ -14,21 +14,21 @@ $comment_user_name = $_SESSION['login_user_username'];
 
 //  checking if the comment id is selected or if the comment id isset
 
-//  if(!isset($_GET['post_id'])){
+ if(!isset($_GET['post_id'])){
 
-//     // that means if the comment id is not set then it will redirect on the dashboard page
-//     // otherwise it will continue the process and the execution
+    // that means if the comment id is not set then it will redirect on the dashboard page
+    // otherwise it will continue the process and the execution
 
-//     echo '
+    echo '
     
-//     <script>
+    <script>
     
-//     window.location.href="/dashboard"
+    window.location.href="/dashboard"
 
-//     </script>
+    </script>
     
-//     ';
-//  }
+    ';
+ }
 
  if(isset($_GET['more_comment'])){
 $result = $controllers->get_data_where("comments", "`comment_post_id` = '$comment_post_id'", "Order By", "`comments`.`comment_id` DESC");
