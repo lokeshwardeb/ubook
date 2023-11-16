@@ -31,7 +31,7 @@ $comment_user_name = $_SESSION['login_user_username'];
 //  }
 
 
-$result = $controllers->get_data_where("post", "`post_id` = '$post_id'")
+$result = $controllers->get_data_where("post", "`post_id` = '$post_id'");
 
 
 
