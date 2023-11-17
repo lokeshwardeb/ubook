@@ -51,66 +51,6 @@ require_once __DIR__ . '/inc/_header.php';
             </div>
         </div>
 
-        <!-- modal section starts here -->
-        <!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button> -->
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-        <form action="" method="post" enctype="multipart/form-data">
-        <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">My Bio</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-        <div class="mb-3">
-            <input type="text" name="user_id" id="user_id" value="<?php echo $_SESSION['login_user_id'];?>"> 
-            <div class="container">
-                <label for="department_bio">Your Department</label>
-                <input type="text" class="form-control" id="department_bio" name="department_bio" placeholder="Ex: Computer Science and Engineering (CSE)">
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="container">
-                <label for="your_university_bio">Your University</label>
-                <input type="text" class="form-control" id="your_university_bio" placeholder="Ex: Dhaka University">
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="container">
-                <label for="your_passion_bio">Your Passion</label>
-                <input type="text" class="form-control" id="your_passion_bio" name="your_passion_bio" placeholder="Ex: Coding, programming">
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="container">
-                <label for="upload_profile_image">Upload Profile Image</label>
-                <input type="file" class="form-control" id="upload_profile_image" placeholder="Ex: Coding, programming">
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="container">
-                <label for="upload_banner_image">Upload Banner Image</label>
-                <input type="file" class="form-control" id="upload_banner_image" placeholder="Ex: Coding, programming">
-            </div>
-        </div>
- 
-     
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="profile_bio_update">Save changes</button>
-      </div>
-        </form>
-   
-    </div>
-  </div>
-</div>
-        <!-- modal section ends here -->
-
-
         <!-- info details sections starts here -->
 
         <div class="container">
@@ -121,10 +61,7 @@ require_once __DIR__ . '/inc/_header.php';
                             Intro
                         </div>
                         <div class="intro_action m-4">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add bio
-</button>
-                            <!-- <a href=""><button class="btn btn-secondary">Add Bio</button></a> -->
+                            <a href=""><button class="btn btn-secondary">Add Bio</button></a>
                         </div>
 
                         <div class="intro_bio_desc_section m-4">

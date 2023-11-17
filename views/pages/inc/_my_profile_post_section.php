@@ -25,6 +25,7 @@ if ($result) {
     </a>
     <div class="poster_time text-secondary">8hr ago</div>
 </div>
+<input type="text" name="submit_post_id" value="'. $post_id .'">
 
 <hr>
 
@@ -52,9 +53,9 @@ echo '
 <hr>
 
 
-<div class="actions_section text-center">
+<div class="actions_section action_like text-center">
     <div class="row">
-        <div class="col-4 like_section">
+        <div class="col-4 like_section " id="like_count_div">
             <i class="fa-brands like_value fa-gratipay text-danger"></i>
 
             ';
@@ -215,9 +216,22 @@ if($result_like_count){
     $('.submitBtn').click(function() {
         var post_id = $(this).closest('form').find('.post_id').val();
         var like_status = $(this).closest('form').find('.like_status').val();
+        // var like_count_div = $(this).closest('div').find('.like_count_div').val();
         var submitBtn = $(this).closest('form').find('.submitBtn');
         // var like_value = $(this).closest('div').find('.like_value');
         // var like_section = $(this).closest('like_section').find
+
+        // var like_count_div = $("#like_count_div");
+
+        var like_count_div = $(this).closest('.action_like').val();
+
+        
+
+
+     
+
+
+        console.log("The like count is =" + like_count_div);
 
 
         // var resultMessage = $(this).closest('form').siblings('.resultMessage').val();
@@ -240,6 +254,18 @@ if($result_like_count){
                 // like_value.text("1added").fadeIn();
             }
         });
+
+        $.ajax({
+            type: "POST",
+            url: "ajax?ajax_function=like_count_update",
+            data: {post_id : post_id},
+            // dataType: "dataType",
+            success: function (response) {
+                // console.log(response)
+                like_count_div.text(response).fadeIn();
+            }
+        });
+
     });
 
     $('.comment_submit').click(function(){

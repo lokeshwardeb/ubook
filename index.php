@@ -23,6 +23,7 @@ $Routes = [
     "/comments" => __DIR__ . "/views/pages/views.comments.php",
     "/copy_link" => __DIR__ . "/views/pages/views.copy_link.php",
     "/post_page" => __DIR__ . "/views/pages/views.post_page.php",
+    "/ajax" => __DIR__ . "/views/pages/views.AJAX.php",
     // "/test" => __DIR__ . "/views/pages/views.test.php",
 
 ];

@@ -85,6 +85,7 @@ echo '
                 <input type="text" value="this2" id="text2">
             <p id="result"></p>
             </p>
+            <input type="text" value="' . $_SESSION['login_user_id'] . '">
             <button id="like-button" class="btn btn-outline-primary" type="button">Like </button>
 
             <p>Dislike Count: <span id="dislike-count"></span></p>

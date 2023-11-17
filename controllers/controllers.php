@@ -72,6 +72,79 @@ class controllers extends models
         }
     }
 
+    public function like_count_update(){
+        // $user_id = $this->pure_data($_POST['user_id']);
+        $post_id = $this->pure_data($_POST['post_id']);
+
+        $result_like_count = $this->get_data_where("likes", "`like_post_id` = '$post_id'");
+
+if($result_like_count){
+    if($result_like_count->num_rows > 0){
+        echo $result_like_count->num_rows;
+
+    }else{
+        echo '0';
+    }
+}
+    }
+
+    public function profile_bio_update(){
+        $department_bio = $this->pure_data($_POST['department_bio']);
+        $your_university_bio = $this->pure_data($_POST['your_university_bio']);
+        $your_passion_bio = $this->pure_data($_POST['your_passion_bio']);
+        $upload_profile_image = $this->pure_data($_POST['upload_profile_image']);
+        $upload_banner_image = $this->pure_data($_POST['upload_banner_image']);
+
+        $user_id = $this->pure_data($_POST['user_id']);
+
+        $check_result = $this->get_data_where("users_bio_info", "`user_id` = '$user_id'");
+
+        if($check_result){
+            if($check_result->num_rows > 0){
+               if($upload_profile_image != '' && $upload_banner_image != ''){
+                // that means the upload profile image is not blank and the upload profile image is selected and the banner image is also selected and not blank
+
+                $update_result = $this->update_where("users_bio_info", "`user_university`='$your_university_bio',`user_passion`='$your_passion_bio',`user_profile_img`='$upload_profile_image',`user_banner_img`='$upload_banner_image'", "`user_id` = '$user_id'");
+               }elseif($upload_profile_image != ''){
+
+                // this means the upload profile image is selected and not blank
+
+                $update_result = $this->update_where("users_bio_info", "`user_university`='$your_university_bio',`user_passion`='$your_passion_bio',`user_profile_img`='$upload_profile_image'", "`user_id` = '$user_id'");
+               }elseif($upload_banner_image != ''){
+
+                // this means the upload banner image is selected and not blank
+
+                $update_result = $this->update_where("users_bio_info", "`user_university`='$your_university_bio',`user_passion`='$your_passion_bio',`user_banner_img`='$upload_banner_image'", "`user_id` = '$user_id'");
+               }else{
+                // that means any image is not selected
+                $update_result = $this->update_where("users_bio_info", "`user_university`='$your_university_bio',`user_passion`='$your_passion_bio',`user_profile_img`='$upload_profile_image',`user_banner_img`='$upload_banner_image'", "`user_id` = '$user_id'");
+               }
+
+                if($update_result){
+                    echo "updated";
+                }else{
+                    echo "not updated";
+                }
+            }else{
+                // that means the bio is not inserted
+                // echo "the bio is not inserted !!";
+
+                $insert_result = $this->insert("users_bio_info", "`user_id`, `user_university`, `user_passion`, `user_profile_img`, `user_banner_img`", "'$user_id', '$your_university_bio', '$your_passion_bio', '$upload_profile_image', '$upload_banner_image'");
+
+                if($insert_result){
+                    echo "inserted";
+                }
+
+            }
+            // echo "result runs";
+        }
+
+        // $result = $this->;
+
+
+
+    }
+
     public function add_comments(){
 
         // if(isset($_POST['more_comments'])){
